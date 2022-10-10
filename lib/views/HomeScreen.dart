@@ -1,3 +1,4 @@
+import 'package:basics/views/tables.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -18,7 +19,14 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: [
           IconButton(
             splashColor: Colors.transparent,
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const TablesScreen(),
+                ),
+              );
+            },
             icon: const Icon(Icons.phone),
           ),
         ],
@@ -130,19 +138,21 @@ class _HomeScreenState extends State<HomeScreen> {
       //     )
       //   ],
       // ),
-      body: ListView.builder(
-        itemBuilder: (context, index) {
-          return Table(
-            border: TableBorder.all(),
-            children: const [
-              TableRow(
-                children: [
-                  Text('1'),
-                ],
-              ),
-            ],
-          );
-        },
+      body: Container(
+        child: Row(
+          children: [
+            newColumn(num: 1),
+            newColumn(num: 11),
+            newColumn(num: 21),
+            newColumn(num: 31),
+            newColumn(num: 41),
+            newColumn(num: 51),
+            newColumn(num: 61),
+            newColumn(num: 71),
+            newColumn(num: 81),
+            newColumn(num: 91),
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton.extended(
         splashColor: Colors.transparent,
@@ -167,6 +177,24 @@ class _HomeScreenState extends State<HomeScreen> {
           label: const Text('Add'),
         ),
       ],
+    );
+  }
+
+  Column newColumn({required int num}) {
+    return Column(
+      children: List.generate(
+        10,
+        (index) {
+          final int count = index + num;
+          return Container(
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.blueAccent),
+            ),
+            padding: const EdgeInsets.all(5.0),
+            child: Text(count.toString()),
+          );
+        },
+      ),
     );
   }
 }

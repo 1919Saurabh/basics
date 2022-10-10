@@ -72,7 +72,7 @@ class Table2 extends StatelessWidget {
                   }
                   return Center(
                     child: Text(
-                      (ans).toString(),
+                      ans.toString(),
                     ),
                   );
                 },

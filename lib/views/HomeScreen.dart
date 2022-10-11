@@ -1,3 +1,6 @@
+import 'dart:ffi';
+
+import 'package:basics/views/Form_Screen.dart';
 import 'package:basics/views/tables.dart';
 import 'package:flutter/material.dart';
 
@@ -31,21 +34,24 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      body: Container(
-        child: Row(
-          children: [
-            newColumn(num: 1),
-            newColumn(num: 11),
-            newColumn(num: 21),
-            newColumn(num: 31),
-            newColumn(num: 41),
-            newColumn(num: 51),
-            newColumn(num: 61),
-            newColumn(num: 71),
-            newColumn(num: 81),
-            newColumn(num: 91),
-          ],
-        ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const SizedBox(
+            width: double.infinity,
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const FormScreen(),
+                ),
+              );
+            },
+            child: const Text('Form'),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton.extended(
         splashColor: Colors.transparent,

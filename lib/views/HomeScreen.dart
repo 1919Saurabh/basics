@@ -1,6 +1,7 @@
 import 'dart:ffi';
 
 import 'package:basics/views/Form_Screen.dart';
+import 'package:basics/views/Lifetrons_Health.dart';
 import 'package:basics/views/tables.dart';
 import 'package:flutter/material.dart';
 
@@ -50,6 +51,17 @@ class _HomeScreenState extends State<HomeScreen> {
               );
             },
             child: const Text('Form'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const LifetronsHealth(),
+                ),
+              );
+            },
+            child: const Text('Lifetrons Health'),
           ),
         ],
       ),

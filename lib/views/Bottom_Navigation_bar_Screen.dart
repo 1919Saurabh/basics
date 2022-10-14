@@ -4,6 +4,8 @@ import 'package:basics/views/Goats_screen.dart';
 import 'package:basics/views/Lifetrons_Health.dart';
 import 'package:flutter/material.dart';
 
+import 'Drawer.dart';
+
 class BottomNavigationBarScreen extends StatefulWidget {
   const BottomNavigationBarScreen({super.key});
 
@@ -39,7 +41,7 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const Drawer(),
+      drawer: const MyDrawer(),
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 133, 8, 222),
         title: _title.elementAt(_selectedIndex),

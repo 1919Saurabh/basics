@@ -79,26 +79,37 @@ class LifetronsHealth extends StatelessWidget {
                           ],
                         ),
                         Container(
-                          padding: const EdgeInsets.all(12),
+                          // padding: const EdgeInsets.all(5),
                           decoration: BoxDecoration(
                             border: Border.all(color: Colors.black),
                             borderRadius: BorderRadius.circular(50),
                           ),
-                          width: 80,
-                          height: 80,
+                          width: 90,
+                          height: 90,
                           child: Column(
-                            children: const [
-                              Text(
+                            children: [
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              const Text(
                                 '0.00',
                                 style: TextStyle(
                                   fontSize: 25,
                                 ),
                               ),
-                              Text(
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              const Text(
                                 'KG',
                                 style: TextStyle(
                                   fontSize: 18,
                                 ),
+                              ),
+                              Container(
+                                height: 6,
+                                width: 60,
+                                color: Colors.green,
                               ),
                             ],
                           ),
@@ -362,7 +373,7 @@ class LifetronsHealth extends StatelessWidget {
               ),
               child: Container(
                 margin:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 padding: const EdgeInsets.all(5),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -382,9 +393,18 @@ class LifetronsHealth extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: const [
-                        CustomElevatedButton(text: 'BP Monitor'),
-                        CustomElevatedButton(text: 'Blood Sugar'),
-                        CustomElevatedButton(text: 'Waist Hip Ratio'),
+                        CustomElevatedButton(
+                          text: 'Blood Sugar',
+                          image: 'lib/assets/icons/sugar-blood-level.png',
+                        ),
+                        CustomElevatedButton(
+                          text: 'Blood Sugar',
+                          image: 'lib/assets/icons/sugar-blood-level.png',
+                        ),
+                        CustomElevatedButton(
+                          text: 'Waist Hip Ratio',
+                          image: 'lib/assets/icons/hips.png',
+                        ),
                       ],
                     ),
                     const Divider(

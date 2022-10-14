@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 class CustomElevatedButton extends StatelessWidget {
   final String text;
-  const CustomElevatedButton({super.key, required this.text});
+  final String image;
+  const CustomElevatedButton(
+      {super.key, required this.text, required this.image});
 
   @override
   Widget build(BuildContext context) {
@@ -12,12 +14,17 @@ class CustomElevatedButton extends StatelessWidget {
       ),
       onPressed: () {},
       child: Row(
-        children: const [
+        children: [
+          Image.asset(
+            image,
+            width: 20,
+          ),
+          const SizedBox(
+            width: 5,
+          ),
           Text(
-            'BP Monitor',
-            style: TextStyle(
-              color: Colors.black,
-            ),
+            text,
+            style: const TextStyle(color: Colors.black, fontSize: 10),
           ),
         ],
       ),

@@ -1,9 +1,12 @@
 import 'dart:ffi';
 
+import 'package:basics/views/Bottom_Navigation_bar_Screen.dart';
 import 'package:basics/views/Form_Screen.dart';
 import 'package:basics/views/Lifetrons_Health.dart';
 import 'package:basics/views/tables.dart';
 import 'package:flutter/material.dart';
+
+import 'mediaQuery.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -57,11 +60,22 @@ class _HomeScreenState extends State<HomeScreen> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const LifetronsHealth(),
+                  builder: (context) => const BottomNavigationBarScreen(),
                 ),
               );
             },
             child: const Text('Lifetrons Health'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const Basics(),
+                ),
+              );
+            },
+            child: const Text('Basics'),
           ),
         ],
       ),

@@ -9,6 +9,12 @@ class LifetronsHealth extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var size, height, width;
+
+    size = MediaQuery.of(context).size;
+    double devicePixelRation = MediaQueryData().devicePixelRatio;
+    height = size.height;
+    width = size.width;
     return Scaffold(
       drawer: const Drawer(),
       body: Container(
@@ -28,23 +34,23 @@ class LifetronsHealth extends StatelessWidget {
                 child: Column(
                   children: [
                     Row(
-                      children: const [
+                      children: [
                         Icon(
                           Icons.monitor_weight_outlined,
-                          size: 30,
+                          size: height * 0.04,
                         ),
                         SizedBox(
-                          width: 10,
+                          width: height * 0.015,
                         ),
                         BoldTextWidget(
                           text: 'Weight Analysis',
-                          size: 20.0,
+                          size: MediaQuery.textScaleFactorOf(context) * 25,
                         ),
-                        Spacer(),
+                        const Spacer(),
                         Icon(
                           Icons.help_outline,
-                          size: 30,
-                          color: Color.fromARGB(255, 9, 126, 13),
+                          size: height * 0.04,
+                          color: const Color.fromARGB(255, 9, 126, 13),
                         ),
                       ],
                     ),
@@ -68,7 +74,9 @@ class LifetronsHealth extends StatelessWidget {
                                 ),
                                 Text(
                                   '0.00',
-                                  style: TextStyle(fontSize: 20),
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                  ),
                                 ),
                               ],
                             ),
@@ -78,40 +86,44 @@ class LifetronsHealth extends StatelessWidget {
                             ),
                           ],
                         ),
-                        Container(
-                          // padding: const EdgeInsets.all(5),
-                          decoration: BoxDecoration(
-                            border: Border.all(color: Colors.black),
-                            borderRadius: BorderRadius.circular(50),
+                        Card(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(100),
+                            side: const BorderSide(
+                              color: Color.fromARGB(255, 183, 177, 177),
+                            ),
                           ),
-                          width: 90,
-                          height: 90,
-                          child: Column(
-                            children: [
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              const Text(
-                                '0.00',
-                                style: TextStyle(
-                                  fontSize: 25,
+                          elevation: 12,
+                          margin: EdgeInsets.zero,
+                          child: Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Column(
+                              children: [
+                                const SizedBox(
+                                  height: 10,
                                 ),
-                              ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              const Text(
-                                'KG',
-                                style: TextStyle(
-                                  fontSize: 18,
+                                const Text(
+                                  '0.00',
+                                  style: TextStyle(
+                                    fontSize: 25,
+                                  ),
                                 ),
-                              ),
-                              Container(
-                                height: 6,
-                                width: 60,
-                                color: Colors.green,
-                              ),
-                            ],
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                const Text(
+                                  'KG',
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                  ),
+                                ),
+                                Container(
+                                  height: 6,
+                                  width: 70,
+                                  color: Colors.green,
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                         Column(

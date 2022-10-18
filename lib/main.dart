@@ -1,6 +1,4 @@
 import 'package:basics/views/HomeScreen.dart';
-import 'package:basics/widget/MediaQuery.dart';
-import 'package:basics/widget/SetSp.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

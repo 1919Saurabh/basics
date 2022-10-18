@@ -28,7 +28,7 @@ class _PhoneNumberTextFormFieldState extends State<PhoneNumberTextFormField> {
       controller: phoneController,
       keyboardType: TextInputType.number,
       decoration: InputDecoration(
-        counterText: "",
+        counterText: '',
         floatingLabelStyle: const TextStyle(fontSize: 18),
         label: const Text('Phone Number'),
         border: const OutlineInputBorder(),

@@ -1,8 +1,10 @@
 import 'package:basics/views/Bottom_Navigation_bar_Screen.dart';
 import 'package:basics/views/Form_Screen.dart';
-import 'package:basics/views/tables.dart';
-import 'package:flutter/material.dart';
 import 'package:basics/views/extensions.dart';
+import 'package:basics/views/tables.dart';
+import 'package:basics/widget/MediaQuery.dart';
+import 'package:flutter/material.dart';
+
 import 'mediaQuery.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -15,12 +17,13 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    MyMediaQuery.init(context: context);
     return Scaffold(
       drawer: const Drawer(),
       appBar: AppBar(
         title: Text(
           'Home',
-          style: TextStyle(fontSize: 50.0.fs),
+          style: TextStyle(fontSize: 50.sp),
         ),
         centerTitle: true,
         actions: [

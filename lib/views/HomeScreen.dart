@@ -1,11 +1,8 @@
-import 'dart:ffi';
-
 import 'package:basics/views/Bottom_Navigation_bar_Screen.dart';
 import 'package:basics/views/Form_Screen.dart';
-import 'package:basics/views/Lifetrons_Health.dart';
 import 'package:basics/views/tables.dart';
 import 'package:flutter/material.dart';
-
+import 'package:basics/views/extensions.dart';
 import 'mediaQuery.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -21,7 +18,10 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       drawer: const Drawer(),
       appBar: AppBar(
-        title: const Text('Home Page'),
+        title: Text(
+          'Home',
+          style: TextStyle(fontSize: 50.0.fs),
+        ),
         centerTitle: true,
         actions: [
           IconButton(

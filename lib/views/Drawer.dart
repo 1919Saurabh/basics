@@ -12,29 +12,39 @@ class MyDrawer extends StatefulWidget {
 class _MyDrawerState extends State<MyDrawer> {
   @override
   Widget build(BuildContext context) {
+    var size, height, width;
+
+    size = MediaQuery.of(context).size;
+    height = size.height;
+    width = size.width;
     return Drawer(
       child: ListView(
         physics: const BouncingScrollPhysics(),
         padding: EdgeInsets.zero,
         children: [
           Container(
-            height: 220,
+            height: height / 3.6259,
             child: DrawerHeader(
               // decoration: BoxDecoration(color: Colors.blue),
               child: Column(
-                children: const [
-                  CircleAvatar(
-                    backgroundColor: Colors.white,
-                    radius: 60,
-                    child: Icon(
-                      Icons.person,
-                      size: 100,
-                      color: Color.fromARGB(255, 114, 110, 110),
+                children: [
+                  Flexible(
+                    child: CircleAvatar(
+                      backgroundColor: Colors.white,
+                      radius: height / 13.295,
+                      child: Icon(
+                        Icons.person,
+                        size: height / 7.9771,
+                        color: const Color.fromARGB(255, 114, 110, 110),
+                      ),
                     ),
+                  ),
+                  SizedBox(
+                    height: height / 39.55,
                   ),
                   Text(
                     'Saurabh Chachere',
-                    style: TextStyle(fontSize: 25),
+                    style: Theme.of(context).textTheme.headline5,
                   ),
                 ],
               ),
@@ -42,7 +52,7 @@ class _MyDrawerState extends State<MyDrawer> {
           ),
           const MyListTileDrawer(
             text: 'My Acccount',
-            icon: Icons.arrow_forward_ios,
+            icon: Icons.person,
             color: Color.fromARGB(255, 133, 8, 222),
           ),
           const MyListTileDrawer(
@@ -80,60 +90,64 @@ class _MyDrawerState extends State<MyDrawer> {
             icon: Icons.exit_to_app,
             color: Colors.red,
           ),
-          const SizedBox(
-            height: 100,
+          SizedBox(
+            height: height / 7.9771,
           ),
           Column(
             children: [
-              const BoldTextWidget(
-                  text: 'For any Feedback or Questions', size: 20.0),
-              const Text(
+              BoldTextWidget(
+                text: 'For any Feedback or Questions',
+                size: height / 53.18,
+              ),
+              Text(
                 'Please write to',
                 style: TextStyle(
-                  fontSize: 20,
-                  color: Color.fromARGB(255, 133, 8, 222),
+                  fontSize: height / 53.18,
+                  color: const Color.fromARGB(255, 133, 8, 222),
                   decoration: TextDecoration.underline,
                 ),
               ),
-              const Text(
+              Text(
                 'support@lifetrons.in',
                 style: TextStyle(
-                  fontSize: 20,
-                  color: Color.fromARGB(255, 133, 8, 222),
+                  fontSize: height / 53.18,
+                  color: const Color.fromARGB(255, 133, 8, 222),
                   decoration: TextDecoration.underline,
                 ),
               ),
-              const SizedBox(
-                height: 15,
+              SizedBox(
+                height: height / 53.18,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset(
                     'lib/assets/icons/facebook.png',
-                    width: 35,
+                    width: width / 11.755,
                   ),
-                  const SizedBox(
-                    width: 10,
+                  SizedBox(
+                    width: height / 79.771,
                   ),
                   Image.asset(
                     'lib/assets/icons/instagram.png',
-                    width: 35,
+                    width: width / 11.755,
                   ),
-                  const SizedBox(
-                    width: 10,
+                  SizedBox(
+                    width: height / 79.771,
                   ),
                   Image.asset(
                     'lib/assets/icons/twitter.png',
-                    width: 35,
+                    width: width / 11.755,
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 15,
+              SizedBox(
+                height: height / 53.18,
               ),
-              const BoldTextWidget(
-                  text: 'App Version : 2.7.4 (386)', size: 20.0),
+              BoldTextWidget(
+                text: 'App Version : 2.7.4 (386)',
+                size: height / 53.18,
+              ),
             ],
           ),
         ],

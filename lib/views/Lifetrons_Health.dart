@@ -1,6 +1,9 @@
 import 'package:basics/widget/Custom_Elevated_Button.dart';
 import 'package:basics/widget/Elevated_button.dart';
+import 'package:basics/widget/My_custom_Icon.dart';
+import 'package:basics/views/extensions.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../widget/Bold_Text_Widget.dart';
 
@@ -9,439 +12,491 @@ class LifetronsHealth extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: unused_local_variable
     var size, height, width;
 
     size = MediaQuery.of(context).size;
-    double devicePixelRation = MediaQueryData().devicePixelRatio;
     height = size.height;
     width = size.width;
+    print(height);
+    print(width);
+    print(MediaQuery.of(context).textScaleFactor);
     return Scaffold(
       drawer: const Drawer(),
-      body: Container(
-        margin: const EdgeInsets.all(5),
-        child: ListView(
-          physics: const BouncingScrollPhysics(),
-          children: [
-            Card(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(15),
-                side: const BorderSide(
-                  color: Color.fromARGB(255, 183, 177, 177),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
+          child: Column(
+            children: [
+              Container(
+                width: 900.0.fs,
+                height: height / 2,
+                color: Colors.red,
+                child: Text(
+                  'Hello',
+                  style: TextStyle(
+                    fontSize: 50.0.fs,
+                  ),
                 ),
               ),
-              child: Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Column(
-                  children: [
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.monitor_weight_outlined,
-                          size: height * 0.04,
-                        ),
-                        SizedBox(
-                          width: height * 0.015,
-                        ),
-                        BoldTextWidget(
-                          text: 'Weight Analysis',
-                          size: MediaQuery.textScaleFactorOf(context) * 25,
-                        ),
-                        const Spacer(),
-                        Icon(
-                          Icons.help_outline,
-                          size: height * 0.04,
-                          color: const Color.fromARGB(255, 9, 126, 13),
-                        ),
-                      ],
-                    ),
-                    const Divider(
-                      height: 20,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
-                          children: [
-                            Row(
-                              children: const [
-                                Icon(
-                                  Icons.emoji_events_outlined,
-                                  size: 18,
-                                  color: Colors.red,
-                                ),
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                Text(
-                                  '0.00',
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            const Text(
-                              'Away from target',
-                              style: TextStyle(fontSize: 15),
-                            ),
-                          ],
-                        ),
-                        Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(100),
-                            side: const BorderSide(
-                              color: Color.fromARGB(255, 183, 177, 177),
-                            ),
-                          ),
-                          elevation: 12,
-                          margin: EdgeInsets.zero,
-                          child: Padding(
-                            padding: const EdgeInsets.all(20.0),
-                            child: Column(
-                              children: [
-                                const SizedBox(
-                                  height: 10,
-                                ),
-                                const Text(
-                                  '0.00',
-                                  style: TextStyle(
-                                    fontSize: 25,
-                                  ),
-                                ),
-                                const SizedBox(
-                                  height: 10,
-                                ),
-                                const Text(
-                                  'KG',
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                  ),
-                                ),
-                                Container(
-                                  height: 6,
-                                  width: 70,
-                                  color: Colors.green,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        Column(
-                          children: [
-                            Row(
-                              children: const [
-                                Text(
-                                  '0.00',
-                                  style: TextStyle(fontSize: 20),
-                                ),
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                Icon(
-                                  Icons.emoji_events_outlined,
-                                  size: 18,
-                                  color: Colors.green,
-                                ),
-                              ],
-                            ),
-                            const Text(
-                              'Ideal target',
-                              style: TextStyle(fontSize: 15),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                    const Divider(
-                      height: 25,
-                    ),
-                    Row(
-                      children: const [
-                        Icon(
-                          Icons.notifications,
-                          color: Color.fromARGB(255, 252, 157, 15),
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Text(
-                          'Every step is progress, no matter how \nsmall',
-                          style: TextStyle(fontSize: 17),
-                        )
-                      ],
-                    )
-                  ],
-                ),
-              ),
-            ),
-            Card(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(15),
-                side: const BorderSide(
-                  color: Color.fromARGB(255, 183, 177, 177),
-                ),
-              ),
-              child: Container(
-                margin:
-                    const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
-                padding: const EdgeInsets.all(5),
-                decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Colors.black26,
-                    ),
-                    borderRadius: BorderRadius.circular(25)),
-                child: Column(
-                  children: [
-                    const BoldTextWidget(
-                      text: 'Add Tracking Device',
-                      size: 20.0,
-                    ),
-                    const Divider(),
-                    Image.network(
-                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH_vX-c6eaRETDN0zX6rB_u3ug2oVvdCi2fodzlw7NDg&s',
-                      width: 50,
-                    ),
-                    const Text('Google Fit (FREE)'),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        shadowColor: Colors.black,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10)),
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 40, vertical: 15),
-                        backgroundColor: const Color.fromARGB(255, 133, 8, 222),
-                      ),
-                      onPressed: () {},
-                      child: const Text('Add'),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Card(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(15),
-                side: const BorderSide(
-                  color: Color.fromARGB(255, 183, 177, 177),
-                ),
-              ),
-              child: Container(
-                margin:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                padding: const EdgeInsets.all(5),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const BoldTextWidget(text: 'Water', size: 20.0),
-                    const Divider(
-                      height: 20,
-                    ),
-                    Row(
-                      children: [
-                        Column(
-                          children: [
-                            RichText(
-                              text: const TextSpan(
-                                children: [
-                                  TextSpan(
-                                    text: '1',
-                                    style: TextStyle(
-                                      fontSize: 25,
-                                      color: Colors.black,
-                                    ),
-                                  ),
-                                  TextSpan(
-                                    text: ' glasses',
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                      color: Colors.black,
-                                    ),
-                                  ),
-                                  TextSpan(
-                                    text: '\n\n0.24 Liters',
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                      color: Colors.black,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                        const Spacer(),
-                        const Icon(
-                          Icons.remove_circle_outline,
-                          color: Colors.red,
-                          size: 30,
-                        ),
-                        Icon(
-                          Icons.add_circle_outline,
-                          color: Colors.green[900],
-                          size: 30,
-                        ),
-                      ],
-                    ),
-                    const Divider(
-                      height: 20,
-                    ),
-                    const Text(
-                      'You are few glasses away from you target',
-                      style: TextStyle(
-                        fontSize: 17,
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            ),
-            Card(
-              shape: RoundedRectangleBorder(
-                side: const BorderSide(
-                  color: Color.fromARGB(255, 183, 177, 177),
-                ),
-                borderRadius: BorderRadius.circular(15),
-              ),
-              child: Container(
-                margin:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                padding: const EdgeInsets.all(5),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      children: const [
-                        Icon(
-                          Icons.medical_services_outlined,
-                          color: Color.fromARGB(255, 133, 8, 222),
-                        ),
-                        BoldTextWidget(
-                            text: '  Your Medical & Insurance Records',
-                            size: 20.0),
-                      ],
-                    ),
-                    const Divider(
-                      height: 20,
-                    ),
-                    Row(
-                      children: [
-                        RichText(
-                          text: const TextSpan(
-                            children: [
-                              TextSpan(
-                                text: '0',
-                                style: TextStyle(
-                                  fontSize: 25,
-                                  color: Colors.black,
-                                ),
-                              ),
-                              TextSpan(
-                                text: '  records',
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  color: Colors.black,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        const Spacer(),
-                        const MyElevatedButton(
-                            text: 'View & Add  ', icon: Icons.unarchive)
-                      ],
-                    ),
-                    const Divider(
-                      height: 20,
-                    ),
-                    Row(
-                      children: [
-                        const Icon(Icons.description_outlined),
-                        Column(
-                          children: const [
-                            BoldTextWidget(
-                              text:
-                                  '  All your important records at a single place',
-                              size: 16.0,
-                            ),
-                            Text(
-                                'View or share with your Doctors or family when\nneeded')
-                          ],
-                        )
-                      ],
-                    )
-                  ],
-                ),
-              ),
-            ),
-            Card(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(15),
-                side: const BorderSide(
-                  color: Color.fromARGB(255, 183, 177, 177),
-                ),
-              ),
-              child: Container(
-                margin:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                padding: const EdgeInsets.all(5),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      children: const [
-                        Icon(
-                          Icons.library_books,
-                          color: Color.fromARGB(255, 133, 8, 222),
-                        ),
-                        BoldTextWidget(text: '  Your Health Book', size: 20.0),
-                      ],
-                    ),
-                    const Divider(
-                      height: 20,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
-                        CustomElevatedButton(
-                          text: 'Blood Sugar',
-                          image: 'lib/assets/icons/sugar-blood-level.png',
-                        ),
-                        CustomElevatedButton(
-                          text: 'Blood Sugar',
-                          image: 'lib/assets/icons/sugar-blood-level.png',
-                        ),
-                        CustomElevatedButton(
-                          text: 'Waist Hip Ratio',
-                          image: 'lib/assets/icons/hips.png',
-                        ),
-                      ],
-                    ),
-                    const Divider(
-                      height: 20,
-                    ),
-                    Row(
-                      children: [
-                        const Icon(Icons.description_outlined),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: const [
-                            BoldTextWidget(
-                              text: '   Track Your daily Health changes',
-                              size: 16.0,
-                            ),
-                            Text('   Analyse the changes on the progress made'),
-                          ],
-                        )
-                      ],
-                    )
-                  ],
-                ),
-              ),
-            )
-          ],
+              // Card(
+              //   shape: RoundedRectangleBorder(
+              //     borderRadius: BorderRadius.circular(height / 53.18),
+              //     side: const BorderSide(
+              //       color: Color.fromARGB(255, 183, 177, 177),
+              //     ),
+              //   ),
+              //   child: Padding(
+              //     padding: EdgeInsets.all(height / 39.8855),
+              //     child: Column(
+              //       children: [
+              //         Row(
+              //           children: [
+              //             MyCustomIcon(
+              //               icon: Icons.monitor_weight_outlined,
+              //               size: height / 19.942,
+              //             ),
+              //             SizedBox(
+              //               width: height / 79.771,
+              //             ),
+              //             BoldTextWidget(
+              //               text: 'Weight Analysis',
+              //               size: height / 31.9084,
+              //             ),
+              //             const Spacer(),
+              //             MyCustomIcon(
+              //               icon: Icons.help_outline,
+              //               size: height / 19.942,
+              //             ),
+              //           ],
+              //         ),
+              //         Divider(
+              //           height: height / 39.8855,
+              //         ),
+              //         Row(
+              //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //           children: [
+              //             Column(
+              //               children: [
+              //                 FittedBox(
+              //                   child: Row(
+              //                     children: [
+              //                       MyCustomIcon(
+              //                         icon: Icons.emoji_events_outlined,
+              //                         size: height / 39.8855,
+              //                         color: Colors.red,
+              //                       ),
+              //                       SizedBox(
+              //                         width: height / 79.771,
+              //                       ),
+              //                       Text(
+              //                         '0.00',
+              //                         style: TextStyle(
+              //                           fontSize: height / 39.8855,
+              //                         ),
+              //                       ),
+              //                     ],
+              //                   ),
+              //                 ),
+              //                 Text(
+              //                   'Away from target',
+              //                   style: TextStyle(fontSize: height / 53.18),
+              //                 ),
+              //               ],
+              //             ),
+              //             Card(
+              //               shape: RoundedRectangleBorder(
+              //                 borderRadius:
+              //                     BorderRadius.circular(height / 13.295),
+              //                 side: const BorderSide(
+              //                   color: Color.fromARGB(255, 183, 177, 177),
+              //                 ),
+              //               ),
+              //               elevation: 12,
+              //               margin: EdgeInsets.zero,
+              //               child: Padding(
+              //                 padding: EdgeInsets.all(height / 39.8855),
+              //                 child: Column(
+              //                   children: [
+              //                     SizedBox(
+              //                       width: height / 79.771,
+              //                     ),
+              //                     Text(
+              //                       '0.00',
+              //                       style: TextStyle(
+              //                         fontSize: height / 31.9084,
+              //                       ),
+              //                     ),
+              //                     SizedBox(
+              //                       width: height / 79.771,
+              //                     ),
+              //                     Text(
+              //                       'KG',
+              //                       style: TextStyle(
+              //                         fontSize: height / 44.317,
+              //                       ),
+              //                     ),
+              //                     Container(
+              //                       height: height / 132.95,
+              //                       width: width / 8.2286,
+              //                       color: Colors.green,
+              //                     ),
+              //                   ],
+              //                 ),
+              //               ),
+              //             ),
+              //             Column(
+              //               children: [
+              //                 Row(
+              //                   children: [
+              //                     Text(
+              //                       '0.00',
+              //                       style: TextStyle(
+              //                         fontSize: height / 39.8855,
+              //                       ),
+              //                     ),
+              //                     SizedBox(
+              //                       width: height / 79.771,
+              //                     ),
+              //                     MyCustomIcon(
+              //                       icon: Icons.emoji_events_outlined,
+              //                       size: height / 39.8855,
+              //                       color: Colors.green,
+              //                     ),
+              //                   ],
+              //                 ),
+              //                 Text(
+              //                   'Ideal target',
+              //                   style: TextStyle(fontSize: height / 53.18),
+              //                 ),
+              //               ],
+              //             ),
+              //           ],
+              //         ),
+              //         Divider(
+              //           height: height / 31.9084,
+              //         ),
+              //         Row(
+              //           children: [
+              //             const Icon(
+              //               Icons.notifications,
+              //               color: Color.fromARGB(255, 252, 157, 15),
+              //             ),
+              //             SizedBox(
+              //               width: height / 79.771,
+              //             ),
+              //             Text(
+              //               'Every step is progress, no matter how \nsmall',
+              //               style: TextStyle(fontSize: height / 44.317),
+              //             )
+              //           ],
+              //         )
+              //       ],
+              //     ),
+              //   ),
+              // ),
+              // Card(
+              //   shape: RoundedRectangleBorder(
+              //     borderRadius: BorderRadius.circular(height / 53.18),
+              //     side: const BorderSide(
+              //       color: Color.fromARGB(255, 183, 177, 177),
+              //     ),
+              //   ),
+              //   child: Container(
+              //     margin: EdgeInsets.symmetric(
+              //       vertical: height / 26.59,
+              //       horizontal: width / 20.5715,
+              //     ),
+              //     padding: EdgeInsets.all(height / 159.542),
+              //     decoration: BoxDecoration(
+              //       border: Border.all(
+              //         color: Colors.black26,
+              //       ),
+              //       borderRadius: BorderRadius.circular(height / 31.9084),
+              //     ),
+              //     child: Column(
+              //       children: [
+              //         BoldTextWidget(
+              //           text: 'Add Tracking Device',
+              //           size: height / 39.8855,
+              //         ),
+              //         const Divider(),
+              //         Image.network(
+              //           'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH_vX-c6eaRETDN0zX6rB_u3ug2oVvdCi2fodzlw7NDg&s',
+              //           width: width / 8.2286,
+              //         ),
+              //         const Text('Google Fit (FREE)'),
+              //         SizedBox(
+              //           height: height / 79.771,
+              //         ),
+              //         ElevatedButton(
+              //           style: ElevatedButton.styleFrom(
+              //             shadowColor: Colors.black,
+              //             shape: RoundedRectangleBorder(
+              //               borderRadius:
+              //                   BorderRadius.circular(height / 79.771),
+              //             ),
+              //             padding: EdgeInsets.symmetric(
+              //               horizontal: width / 10.2857,
+              //               vertical: height / 53.18,
+              //             ),
+              //             backgroundColor:
+              //                 const Color.fromARGB(255, 133, 8, 222),
+              //           ),
+              //           onPressed: () {},
+              //           child: const Text('Add'),
+              //         ),
+              //       ],
+              //     ),
+              //   ),
+              // ),
+              // Card(
+              //   shape: RoundedRectangleBorder(
+              //     borderRadius: BorderRadius.circular(height / 53.18),
+              //     side: const BorderSide(
+              //       color: Color.fromARGB(255, 183, 177, 177),
+              //     ),
+              //   ),
+              //   child: Container(
+              //     margin: EdgeInsets.symmetric(
+              //       vertical: height / 79.771,
+              //       horizontal: width / 20.5715,
+              //     ),
+              //     padding: EdgeInsets.all(height / 159.542),
+              //     child: Column(
+              //       crossAxisAlignment: CrossAxisAlignment.start,
+              //       children: [
+              //         BoldTextWidget(text: 'Water', size: height / 39.8855),
+              //         Divider(
+              //           height: height / 39.8855,
+              //         ),
+              //         Row(
+              //           children: [
+              //             Column(
+              //               children: [
+              //                 RichText(
+              //                   text: TextSpan(
+              //                     children: [
+              //                       TextSpan(
+              //                         text: '0',
+              //                         style: TextStyle(
+              //                           fontSize: height / 31.9084,
+              //                           color: Colors.black,
+              //                         ),
+              //                       ),
+              //                       TextSpan(
+              //                         text: ' glasses',
+              //                         style: TextStyle(
+              //                           fontSize: height / 39.8855,
+              //                           color: Colors.black,
+              //                         ),
+              //                       ),
+              //                       TextSpan(
+              //                         text: '\n\n0.00 Liters',
+              //                         style: TextStyle(
+              //                           fontSize: height / 39.8855,
+              //                           color: Colors.black,
+              //                         ),
+              //                       ),
+              //                     ],
+              //                   ),
+              //                 ),
+              //               ],
+              //             ),
+              //             const Spacer(),
+              //             MyCustomIcon(
+              //               icon: Icons.remove_circle_outline,
+              //               color: Colors.red,
+              //               size: height / 26.59,
+              //             ),
+              //             MyCustomIcon(
+              //               icon: Icons.add_circle_outline,
+              //               color: Colors.green[900],
+              //               size: height / 26.59,
+              //             ),
+              //           ],
+              //         ),
+              //         Divider(
+              //           height: height / 39.8855,
+              //         ),
+              //         Text(
+              //           'You are few glasses away from you target',
+              //           style: TextStyle(
+              //             fontSize: height / 44.317,
+              //           ),
+              //         )
+              //       ],
+              //     ),
+              //   ),
+              // ),
+              // Card(
+              //   shape: RoundedRectangleBorder(
+              //     side: const BorderSide(
+              //       color: Color.fromARGB(255, 183, 177, 177),
+              //     ),
+              //     borderRadius: BorderRadius.circular(height / 53.18),
+              //   ),
+              //   child: Container(
+              //     margin: EdgeInsets.symmetric(
+              //       vertical: height / 79.771,
+              //       horizontal: width / 39.8855,
+              //     ),
+              //     padding: EdgeInsets.all(height / 159.542),
+              //     child: Column(
+              //       crossAxisAlignment: CrossAxisAlignment.start,
+              //       children: [
+              //         Row(
+              //           children: [
+              //             const Icon(
+              //               Icons.medical_services_outlined,
+              //               color: Color.fromARGB(255, 133, 8, 222),
+              //             ),
+              //             BoldTextWidget(
+              //               text: '  Your Medical & Insurance Records',
+              //               size: height / 39.8855,
+              //             ),
+              //           ],
+              //         ),
+              //         Divider(
+              //           height: height / 39.8855,
+              //         ),
+              //         Row(
+              //           children: [
+              //             RichText(
+              //               text: TextSpan(
+              //                 children: [
+              //                   TextSpan(
+              //                     text: '0',
+              //                     style: TextStyle(
+              //                       fontSize: height / 31.9084,
+              //                       color: Colors.black,
+              //                     ),
+              //                   ),
+              //                   TextSpan(
+              //                     text: '  records',
+              //                     style: TextStyle(
+              //                       fontSize: height / 39.8855,
+              //                       color: Colors.black,
+              //                     ),
+              //                   ),
+              //                 ],
+              //               ),
+              //             ),
+              //             const Spacer(),
+              //             const MyElevatedButton(
+              //               text: 'View & Add  ',
+              //               icon: Icons.unarchive,
+              //             )
+              //           ],
+              //         ),
+              //         Divider(
+              //           height: height / 39.8855,
+              //         ),
+              //         Row(
+              //           children: [
+              //             const Icon(Icons.description_outlined),
+              //             SizedBox(
+              //               width: width / 20.5715,
+              //             ),
+              //             Flexible(
+              //               child: Column(
+              //                 crossAxisAlignment: CrossAxisAlignment.start,
+              //                 children: [
+              //                   BoldTextWidget(
+              //                     text:
+              //                         'All your important records at a single place',
+              //                     size: height / 49.8568,
+              //                   ),
+              //                   const Text(
+              //                     'View or share with your Doctors or family when needed',
+              //                     overflow: TextOverflow.clip,
+              //                   )
+              //                 ],
+              //               ),
+              //             )
+              //           ],
+              //         )
+              //       ],
+              //     ),
+              //   ),
+              // ),
+              // Card(
+              //   shape: RoundedRectangleBorder(
+              //     borderRadius: BorderRadius.circular(height / 53.18),
+              //     side: const BorderSide(
+              //       color: Color.fromARGB(255, 183, 177, 177),
+              //     ),
+              //   ),
+              //   child: Container(
+              //     margin: EdgeInsets.symmetric(
+              //       vertical: height / 79.771,
+              //       horizontal: width / 41.143,
+              //     ),
+              //     padding: EdgeInsets.all(height / 159.542),
+              //     child: Column(
+              //       crossAxisAlignment: CrossAxisAlignment.start,
+              //       children: [
+              //         Row(
+              //           children: [
+              //             const Icon(
+              //               Icons.library_books,
+              //               color: Color.fromARGB(255, 133, 8, 222),
+              //             ),
+              //             BoldTextWidget(
+              //               text: '  Your Health Book',
+              //               size: height / 39.8855,
+              //             ),
+              //           ],
+              //         ),
+              //         Divider(
+              //           height: height / 39.8855,
+              //         ),
+              //         Row(
+              //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //           children: const [
+              //             CustomElevatedButton(
+              //               text: 'Blood Sugar',
+              //               image: 'lib/assets/icons/sugar-blood-level.png',
+              //             ),
+              //             CustomElevatedButton(
+              //               text: 'Blood Sugar',
+              //               image: 'lib/assets/icons/sugar-blood-level.png',
+              //             ),
+              //             CustomElevatedButton(
+              //               text: 'Waist Hip Ratio',
+              //               image: 'lib/assets/icons/hips.png',
+              //             ),
+              //           ],
+              //         ),
+              //         Divider(
+              //           height: height / 39.8855,
+              //         ),
+              //         Row(
+              //           children: [
+              //             const Icon(Icons.description_outlined),
+              //             Flexible(
+              //               child: Column(
+              //                 crossAxisAlignment: CrossAxisAlignment.start,
+              //                 children: [
+              //                   BoldTextWidget(
+              //                     text: 'Track Your daily Health changes',
+              //                     size: height / 49.8568,
+              //                   ),
+              //                   const Text(
+              //                     'Analyse the changes on the progress made',
+              //                   ),
+              //                 ],
+              //               ),
+              //             )
+              //           ],
+              //         )
+              //       ],
+              //     ),
+              //   ),
+              // )
+            ],
+          ),
         ),
       ),
     );

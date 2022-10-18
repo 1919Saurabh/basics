@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 
 class BoldTextWidget extends StatelessWidget {
   final String text;
-  final size;
+  final double size;
   const BoldTextWidget({super.key, required this.text, required this.size});
 
   @override

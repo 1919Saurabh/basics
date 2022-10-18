@@ -9,6 +9,11 @@ class MyListTileDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var size, height, width;
+
+    size = MediaQuery.of(context).size;
+    height = size.height;
+    width = size.width;
     return Container(
       decoration: const BoxDecoration(
         border: Border(
@@ -20,11 +25,12 @@ class MyListTileDrawer extends StatelessWidget {
           icon,
           color: color,
         ),
-        title: Text(
-          this.text,
-          style: const TextStyle(
-            fontSize: 20,
-            color: Color.fromARGB(255, 133, 8, 222),
+        title: Flexible(
+          child: Text(
+            this.text,
+            style: TextStyle(
+                color: const Color.fromARGB(255, 133, 8, 222),
+                fontSize: height / 44.317),
           ),
         ),
         trailing: const Icon(

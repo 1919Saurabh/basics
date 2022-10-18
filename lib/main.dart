@@ -1,5 +1,8 @@
 import 'package:basics/views/HomeScreen.dart';
+import 'package:basics/widget/MediaQuery.dart';
+import 'package:basics/widget/SetSp.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
   runApp(const MyStatelessWidget());
@@ -10,9 +13,13 @@ class MyStatelessWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+    return ScreenUtilInit(
+      builder: (context, child) {
+        return const MaterialApp(
+          debugShowCheckedModeBanner: false,
+          home: HomeScreen(),
+        );
+      },
     );
   }
 }

@@ -8,6 +8,11 @@ class CustomElevatedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var size, height, width;
+
+    size = MediaQuery.of(context).size;
+    height = size.height;
+    width = size.width;
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         backgroundColor: Colors.white,
@@ -17,14 +22,17 @@ class CustomElevatedButton extends StatelessWidget {
         children: [
           Image.asset(
             image,
-            width: 20,
+            width: width / 20.5715,
           ),
-          const SizedBox(
-            width: 5,
+          SizedBox(
+            width: width / 82.286,
           ),
           Text(
             text,
-            style: const TextStyle(color: Colors.black, fontSize: 10),
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: height / 79.771,
+            ),
           ),
         ],
       ),

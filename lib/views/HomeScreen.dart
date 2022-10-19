@@ -1,6 +1,8 @@
 import 'package:basics/views/Bottom_Navigation_bar_Screen.dart';
 import 'package:basics/views/Form_Screen.dart';
-import 'package:basics/views/extensions.dart';
+import 'package:basics/views/Lifetrons_Health.dart';
+// import 'package:basics/views/extensions.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:basics/views/tables.dart';
 import 'package:basics/widget/MediaQuery.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: Text(
           'Home',
-          style: TextStyle(fontSize: 50.sp),
+          style: TextStyle(fontSize: 20.h),
         ),
         centerTitle: true,
         actions: [
@@ -63,7 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const BottomNavigationBarScreen(),
+                  builder: (context) => const LifetronsHealth(),
                 ),
               );
             },

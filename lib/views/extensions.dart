@@ -45,13 +45,35 @@ extension fontSize on num {
 //     return this * scaleText;
 //   }
 
+// For Calculating font size.
   double get sp {
     double screenWidth = 0, scaleWidth = 0, scaleText = 0;
     const Size screenSize = Size(1200, 2000);
     screenWidth = MyMediaQuery.screenWidth;
     scaleWidth = screenWidth / screenSize.width;
-    scaleWidth = screenWidth / screenSize.width;
     scaleText = scaleWidth;
     return this * scaleText;
+  }
+
+  // For Calculating height.
+  double get h {
+    double screenHeight = 0, scaleHeight = 0;
+    const Size screenSize = Size(1200, 2000);
+    screenHeight = MyMediaQuery.screenHeight;
+    scaleHeight = screenHeight / screenSize.height;
+    // print('Total height of screen : $screenHeight');
+
+    return this * scaleHeight;
+  }
+
+  // For calculating width.
+  double get w {
+    double screenWidth = 0, scaleWidth = 0;
+    const Size screenSize = Size(1200, 2000);
+    screenWidth = MyMediaQuery.screenWidth;
+    scaleWidth = screenWidth / screenSize.width;
+    // print('Total width of screen : $screenWidth');
+
+    return this * scaleWidth;
   }
 }

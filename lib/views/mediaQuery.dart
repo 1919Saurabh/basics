@@ -1,14 +1,13 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Basics extends StatelessWidget {
   const Basics({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var height = MediaQuery.of(context).size.height;
-    var width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     print(height);
     print(height / 90);
     print(height / 12.16);

@@ -1,9 +1,10 @@
 // import 'package:basics/widget/Custom_Elevated_Button.dart';
 // import 'package:basics/widget/Elevated_button.dart';
 // import 'package:basics/widget/My_custom_Icon.dart';
-// import 'package:basics/views/extensions.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:basics/views/extensions.dart';
 import 'package:flutter/material.dart';
+
+import '../widget/Bold_Text_Widget.dart';
 
 // import '../widget/Bold_Text_Widget.dart';
 
@@ -17,33 +18,23 @@ class LifetronsHealth extends StatelessWidget {
     size = MediaQuery.of(context).size;
     height = size.height;
     width = size.width;
-    print('Height without H :- + ${MediaQuery.of(context).size.height / 2}');
-    print('width without W :- + ${MediaQuery.of(context).size.width / 2}');
+    // print('Height without H :- + ${MediaQuery.of(context).size.height / 2}');
+    // print('width without W :- + ${MediaQuery.of(context).size.width / 2}');
 
-    print('Height with H :- + ${(MediaQuery.of(context).size.height / 2).h}');
-    print('width with w :- + ${(MediaQuery.of(context).size.width / 2).w}');
+    // print('Height with H :- + ${(MediaQuery.of(context).size.height / 2).h}');
+    // print('width with w :- + ${(MediaQuery.of(context).size.width / 2)}');
 
     return Scaffold(
       drawer: const Drawer(),
       body: SingleChildScrollView(
         // physics: const BouncingScrollPhysics(),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Center(
-              child: Container(
-                height: 1000.h,
-                // width: 200.w,
-                color: Colors.red,
-              ),
+            Container(
+              height: 1000.h,
+              width: 600.w,
+              color: Colors.red,
             ),
-            // Container(
-            //   height: MediaQuery.of(context).size.height / 2,
-            //   width: MediaQuery.of(context).size.width / 2,
-            //   color: Colors.blue,
-            // ),
-
             // Card(
             //   shape: RoundedRectangleBorder(
             //     borderRadius: BorderRadius.circular(height / 53.18),
@@ -238,15 +229,13 @@ class LifetronsHealth extends StatelessWidget {
             //           style: ElevatedButton.styleFrom(
             //             shadowColor: Colors.black,
             //             shape: RoundedRectangleBorder(
-            //               borderRadius:
-            //                   BorderRadius.circular(height / 79.771),
+            //               borderRadius: BorderRadius.circular(height / 79.771),
             //             ),
             //             padding: EdgeInsets.symmetric(
             //               horizontal: width / 10.2857,
             //               vertical: height / 53.18,
             //             ),
-            //             backgroundColor:
-            //                 const Color.fromARGB(255, 133, 8, 222),
+            //             backgroundColor: const Color.fromARGB(255, 133, 8, 222),
             //           ),
             //           onPressed: () {},
             //           child: const Text('Add'),

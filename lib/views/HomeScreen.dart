@@ -1,7 +1,9 @@
 import 'package:basics/views/Bottom_Navigation_bar_Screen.dart';
 import 'package:basics/views/Form_Screen.dart';
 import 'package:basics/views/Lifetrons_Health.dart';
-import 'package:basics/views/extensions.dart';
+import 'package:basics/views/example.dart';
+// import 'package:basics/views/extensions.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:basics/views/tables.dart';
 import 'package:basics/widget/MediaQuery.dart';
@@ -82,6 +84,17 @@ class _HomeScreenState extends State<HomeScreen> {
             },
             child: const Text('Basics'),
           ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ExampleScreen(),
+                ),
+              );
+            },
+            child: const Text('Example'),
+          ),
         ],
       ),
       floatingActionButton: FloatingActionButton.extended(
@@ -99,9 +112,10 @@ class _HomeScreenState extends State<HomeScreen> {
           style: ElevatedButton.styleFrom(
               backgroundColor: Colors.red,
               splashFactory: NoSplash.splashFactory),
-          icon: const Icon(
+          icon: Icon(
             Icons.add,
             color: Colors.black,
+            size: 30.r,
           ),
           onPressed: () {},
           label: const Text('Add'),

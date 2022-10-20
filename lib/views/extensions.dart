@@ -4,7 +4,6 @@ import 'package:basics/widget/MediaQuery.dart';
 import 'package:flutter/material.dart';
 
 extension fontSize on num {
-// For Calculating font size.
   static double screenWidth = 0,
       scaleWidth = 0,
       scaleText = 0,
@@ -13,6 +12,7 @@ extension fontSize on num {
 
   static const Size screenSize = Size(1200, 2000);
 
+  //Adapter font
   double get sp {
     if (MyMediaQuery.myContext != null) {
       screenHeight = MyMediaQuery.screenHeight;
@@ -38,7 +38,7 @@ extension fontSize on num {
     return this * scaleText;
   }
 
-  // For Calculating height.
+  //Adapted to screen height , under normal circumstances, the height still uses x.w
   double get h {
     if (MyMediaQuery.myContext != null) {
       screenHeight = MyMediaQuery.screenHeight;
@@ -54,7 +54,7 @@ extension fontSize on num {
     return this * scaleHeight;
   }
 
-  // For calculating width.
+  //Adapted to screen width
   double get w {
     if (MyMediaQuery.myContext != null) {
       screenWidth = MyMediaQuery.screenWidth;
@@ -63,5 +63,28 @@ extension fontSize on num {
     }
     scaleWidth = screenWidth / screenSize.width;
     return this * scaleWidth;
+  }
+
+  //Adapt according to the smaller of width or height
+  double get r {
+    if (MyMediaQuery.myContext != null) {
+      screenHeight = MyMediaQuery.screenHeight;
+      screenWidth = MyMediaQuery.screenWidth;
+    } else {
+      screenHeight = screenSize.height;
+      screenWidth = screenSize.width;
+    }
+
+    if (MyMediaQuery.splitScreenMode) {
+      scaleHeight = max(screenHeight, 700) / screenSize.height;
+    } else {
+      scaleHeight = screenHeight / screenSize.height;
+    }
+
+    scaleWidth = screenWidth / screenSize.width;
+
+    print(this);
+
+    return this * min(scaleWidth, scaleHeight);
   }
 }

@@ -1,9 +1,7 @@
 import 'package:basics/views/Bottom_Navigation_bar_Screen.dart';
 import 'package:basics/views/Form_Screen.dart';
-import 'package:basics/views/Lifetrons_Health.dart';
 import 'package:basics/views/example.dart';
-// import 'package:basics/views/extensions.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:basics/views/extensions.dart';
 
 import 'package:basics/views/tables.dart';
 import 'package:basics/widget/MediaQuery.dart';

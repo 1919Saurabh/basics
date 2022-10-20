@@ -1,13 +1,12 @@
 // ignore_for_file: prefer_typing_uninitialized_variables
 
-// import 'package:basics/views/extensions.dart';
+import 'package:basics/views/extensions.dart';
 import 'package:basics/widget/Custom_Elevated_Button.dart';
 import 'package:basics/widget/Elevated_button.dart';
 import 'package:basics/widget/My_custom_Icon.dart';
 import 'package:flutter/material.dart';
 
 import '../widget/Bold_Text_Widget.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // import '../widget/Bold_Text_Widget.dart';
 
